@@ -44,6 +44,14 @@ export const usePomodoroTimer = (initialMode = "focus") => {
     setIsRunning(true);
   }, []);
 
+  const stop = useCallback(() => {
+    setIsRunning(false);
+      const audio = new Audio(notificationSound)
+	return audio.play()
+  }, []);
+
+  
+
   // Reset timer
   const reset = useCallback(() => {
     setIsRunning(false);
